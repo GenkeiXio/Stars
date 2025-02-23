@@ -1,3 +1,8 @@
+window.onload = function() {
+    createStars();
+    createShootingStars();
+};
+
 function createStars() {
     const starsContainer = document.getElementById("stars");
     for (let i = 0; i < 200; i++) {
@@ -25,5 +30,37 @@ function createShootingStars() {
     }, 500);
 }
 
-createStars();
-createShootingStars();
+document.addEventListener("click", function() {
+    const audio = document.getElementById("bg-music");
+    if (audio.paused) {
+        audio.play();
+    }
+
+    document.addEventListener("mousemove", function (e) {
+        let body = document.querySelector("body");
+        let flower = document.createElement("div");
+        flower.classList.add("flower"); // Add class to apply styles
+    
+        let x = e.clientX;
+        let y = e.clientY;
+    
+        flower.style.left = x + "px";
+        flower.style.top = y + "px";
+    
+        let size = Math.random() * 80;
+        flower.style.width = 20 + size + "px";
+        flower.style.height = 20 + size + "px";
+    
+        let rotation = Math.random() * 360;
+        flower.style.transform = `rotate(${rotation}deg)`;
+    
+        body.appendChild(flower);
+    
+        setTimeout(function () {
+            flower.remove();
+        }, 9000);
+    });
+    
+    
+    
+});
