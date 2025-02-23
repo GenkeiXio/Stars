@@ -32,9 +32,10 @@ body {
 
 .star {
     position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
+    width: 3px;
+    height: 3px;
+    background: radial-gradient(circle, white, rgba(255, 255, 255, 0.1));
+    border-radius: 50%;
     opacity: 0.8;
     animation: twinkle 3s infinite alternate;
 }
@@ -47,19 +48,26 @@ body {
 
 .shooting-star {
     position: absolute;
-    width: 5px;
-    height: 5px;
+    width: 2px;
+    height: 2px;
     background: white;
-    box-shadow: 0 0 10px white;
+    border-radius: 50%;
+    box-shadow: 0 0 15px white;
     opacity: 0.9;
     transform: rotate(-45deg);
-    animation: shoot 2s linear infinite;
+    animation: shoot 1.5s linear infinite;
 }
 
 @keyframes shoot {
     0% {
         transform: translate(100vw, -50px) scaleX(1);
         opacity: 1;
+        width: 2px;
+        height: 2px;
+    }
+    50% {
+        width: 5px;
+        height: 5px;
     }
     100% {
         transform: translate(-100vw, 100vh) scaleX(2);

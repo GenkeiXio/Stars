@@ -20,7 +20,7 @@ function createShootingStars() {
             shootingStar.style.left = `${Math.random() * window.innerWidth}px`;
             shootingStar.style.top = `${Math.random() * window.innerHeight / 2}px`;
             document.body.appendChild(shootingStar);
-            setTimeout(() => { shootingStar.remove(); }, 2000);
+            setTimeout(() => { shootingStar.remove(); }, 1500);
         }
     }, 500);
 }
